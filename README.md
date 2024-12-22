@@ -55,8 +55,6 @@ laraToast()->info('Info', 'Here is some information');
 // Danger notification
 laraToast()->danger('Error!', 'Something went wrong');
 
-// Persistent Notification
-laraToast()->danger('Error!', 'Persistent Message');
 ```
 
 ### Method Parameters
@@ -82,6 +80,9 @@ laraToast()->info('Processing', 'Please wait while we process your request.', 30
 
 // Error notification
 laraToast()->danger('Error!', 'Unable to connect to the server.');
+
+// Persistent Notification
+laraToast()->danger('Error!', 'Persistent Message')->persistent();
 ```
 
 ## License
