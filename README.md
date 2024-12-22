@@ -54,6 +54,9 @@ laraToast()->info('Info', 'Here is some information');
 
 // Danger notification
 laraToast()->danger('Error!', 'Something went wrong');
+
+// Persistent Notification
+laraToast()->danger('Error!', 'Persistent Message');
 ```
 
 ### Method Parameters
