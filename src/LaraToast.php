@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Prajwal89\LaraToast;
 
 use Illuminate\Support\Facades\Session;
@@ -12,7 +14,7 @@ class LaraToast
         'type' => 'info',
         'title' => 'Title',
         'description' => 'Description',
-        'autoCloseInMs' => 5000
+        'autoCloseInMs' => 5000,
     ];
 
     /**
@@ -30,7 +32,7 @@ class LaraToast
     /**
      * Set an informational toast.
      */
-    public function info(string $title, string $description = null, ?int $autoCloseInMs = 5000): self
+    public function info(string $title, ?string $description = null, ?int $autoCloseInMs = 5000): self
     {
         return $this->setToast('info', $title, $description, $autoCloseInMs);
     }
@@ -38,7 +40,7 @@ class LaraToast
     /**
      * Set a success toast.
      */
-    public function success(string $title, string $description = null, ?int $autoCloseInMs = 5000): self
+    public function success(string $title, ?string $description = null, ?int $autoCloseInMs = 5000): self
     {
         return $this->setToast('success', $title, $description, $autoCloseInMs);
     }
@@ -46,7 +48,7 @@ class LaraToast
     /**
      * Set a danger toast.
      */
-    public function danger(string $title, string $description = null, ?int $autoCloseInMs = 5000): self
+    public function danger(string $title, ?string $description = null, ?int $autoCloseInMs = 5000): self
     {
         return $this->setToast('danger', $title, $description, $autoCloseInMs);
     }
@@ -60,7 +62,7 @@ class LaraToast
             'type' => $type,
             'title' => $title,
             'description' => $description,
-            'autoCloseInMs' => $this->isPersistent ? null : $autoCloseInMs
+            'autoCloseInMs' => $this->isPersistent ? null : $autoCloseInMs,
         ];
 
         $this->updateSession();

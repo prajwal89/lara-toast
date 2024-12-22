@@ -1,18 +1,20 @@
 <?php
 
+declare(strict_types=1);
+
 use Prajwal89\LaraToast\LaraToast;
 
 if (!function_exists('laraToast')) {
     function laraToast()
     {
-        return new LaraToast();
+        return new LaraToast;
     }
 }
 
 if (!function_exists('laraToastJs')) {
     function laraToastJs()
     {
-        return <<<JS
+        return <<<'JS'
             function showToast(type, title, description, autoCloseInMs) {
                 const container = document.querySelector('.toast-container');
                 const toast = document.createElement('div');
@@ -31,10 +33,10 @@ if (!function_exists('laraToastJs')) {
                 };
     
                 toast.innerHTML = `
-                    <div class="toast-icon">\${icons[type]}</div>
+                    <div class="toast-icon">${icons[type]}</div>
                     <div class="toast-content">
-                        <div class="toast-title">\${title}</div>
-                        <div class="toast-description">\${description}</div>
+                        <div class="toast-title">${title}</div>
+                        <div class="toast-description">${description}</div>
                     </div>
                     <button class="close-btn" onclick="closeToast(this)" aria-label="Close notification">
                         <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -70,7 +72,7 @@ if (!function_exists('laraToastJs')) {
 if (!function_exists('laraToastCss')) {
     function laraToastCss()
     {
-        return <<<CSS
+        return <<<'CSS'
             .toast-container {
                 position: fixed;
                 top: 1rem;
