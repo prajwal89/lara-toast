@@ -16,7 +16,7 @@ A simple, lightweight package for displaying toast notifications in your Laravel
 Install the package via composer:
 
 ```bash
-composer require prajwal89/lara-toasts
+composer require prajwal89/lara-toast
 ```
 
 ## Usage
