@@ -2,6 +2,8 @@
 
 A simple, lightweight package for displaying toast notifications in your Laravel applications with zero dependencies.
 
+![Screenshot](https://raw.githubusercontent.com/prajwal89/lara-toast/refs/heads/main/screenshots/toasts.png)
+
 ## Features
 
 - 🚀 Zero dependencies
