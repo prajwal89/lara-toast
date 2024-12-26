@@ -36,7 +36,7 @@ if (!function_exists('laraToastJs')) {
                     <div class="toast-icon">${icons[type]}</div>
                     <div class="toast-content">
                         <div class="toast-title">${title}</div>
-                        <div class="toast-description">${description}</div>
+                        <div class="toast-description">${description ? description : ''}</div>
                     </div>
                     <button class="close-btn" onclick="closeToast(this)" aria-label="Close notification">
                         <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
