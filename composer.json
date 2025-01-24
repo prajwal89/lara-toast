@@ -18,6 +18,13 @@
             "src/helpers.php"
         ]
     },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Prajwal89\\LaraToast\\LaraToastsServiceProvider"
+            ]
+        }
+    },
     "authors": [
         {
             "name": "Prajwal Hallale",
