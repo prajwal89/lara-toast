@@ -15,12 +15,16 @@ class LaraToastsServiceProvider extends ServiceProvider
     {
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'lara-toast');
 
-        Blade::directive('laraToastCSS', function () {
-            return '<style><?php echo laraToastCss(); ?></style>';
-        });
+        $this->publishes([
+            __DIR__ . '/../public' => public_path('vendor/prajwal89/lara-toast'),
+        ], 'lara-toast-assets');
 
         Blade::directive('laraToastJs', function () {
-            return '<script><?php echo laraToastJs(); ?></script>';
+            return "<script src=\"{{ asset('/vendor/prajwal89/lara-toast/lara-toast.js') }}\" defer></script>";
+        });
+
+        Blade::directive('laraToastCSS', function () {
+            return "<link href=\"{{ asset('/vendor/prajwal89/lara-toast/lara-toast.css') }}\" rel=\"stylesheet\">";
         });
     }
 }

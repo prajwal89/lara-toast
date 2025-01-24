@@ -43,7 +43,13 @@ Add these Blade directives in your layout file (typically in `layouts/app.blade.
 </html>
 ```
 
-### 2. Show Notifications
+### 2. Publish Frontend Assets
+
+```bash
+php artisan vendor:publish --tag=lara-toast-assets
+```
+
+### 3. Show Notifications
 
 You can trigger toasts using the following methods:
 
