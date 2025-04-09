@@ -10,6 +10,8 @@ class LaraToast
 {
     protected bool $isPersistent = false;
 
+    protected const SESSION_KEY = 'lara-toast';
+
     protected array $toast = [
         'type' => 'info',
         'title' => 'Title',
@@ -75,6 +77,22 @@ class LaraToast
      */
     protected function updateSession(): void
     {
-        Session::flash('lara-toast', $this->toast);
+        Session::put(self::SESSION_KEY, $this->toast);
+    }
+
+    /**
+     * Get the current toast data from the session.
+     */
+    public function getToast(): ?array
+    {
+        return Session::get(self::SESSION_KEY);
+    }
+
+    /**
+     * Clear the toast data from the session.
+     */
+    public function clear(): void
+    {
+        Session::forget(self::SESSION_KEY);
     }
 }
