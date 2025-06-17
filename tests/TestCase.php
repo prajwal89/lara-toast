@@ -1,6 +1,6 @@
 <?php
 
-namespace Prajwal\LaraToast\Tests;
+namespace Prajwal89\LaraToast\Tests;
 
 use Orchestra\Testbench\TestCase as OrchestraTestCase;
 use Prajwal89\LaraToast\LaraToastsServiceProvider;

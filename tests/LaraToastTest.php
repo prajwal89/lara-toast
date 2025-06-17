@@ -1,24 +1,33 @@
 <?php
 
-namespace Prajwal\LaraToast\Tests;
+namespace Prajwal89\LaraToast\Tests;
+
+use PHPUnit\Framework\Attributes\Test;
 
 class LaraToastTest extends TestCase
 {
-    /** @test */
-    public function test_it_can_render_the_toast_component()
+    #[Test]
+    public function test_it_renders_the_toast_component_when_session_is_present()
     {
-        $view = $this->blade('<x-lara-toast::toast type="success" message="Saved!" />');
+        session()->put('lara-toast', [
+            'type' => 'success',
+            'title' => 'Saved!',
+            'description' => 'Your data has been saved.',
+            'autoCloseInMs' => 5000,
+        ]);
+
+        $view = $this->blade('<x-lara-toast::toast />');
 
         $view->assertSee('Saved!');
-        $view->assertSee('bg-green-500'); // Tailwind class for success
+        $view->assertSee('Your data has been saved.');
+        $view->assertSee('success');
     }
 
-    /** @test */
-    public function test_it_defaults_to_info_if_type_is_not_given()
+    #[Test]
+    public function test_it_does_not_render_when_session_is_not_present()
     {
-        $view = $this->blade('<x-lara-toast::toast message="Info message" />');
+        $view = $this->blade('<x-lara-toast::toast />');
 
-        $view->assertSee('Info message');
-        $view->assertSee('bg-blue-500');
+        $this->assertEmpty((string) $view);
     }
 }

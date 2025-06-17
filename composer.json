@@ -20,7 +20,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Prajwal\\LaraToast\\Tests\\": "tests/"
+            "Prajwal89\\LaraToast\\Tests\\": "tests/"
         }
     },
     "extra": {
